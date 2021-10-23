@@ -9,13 +9,13 @@ jobs:
       run:
         working-directory: ./app
     steps:
-      - uses: actions/checkout@v2
-
       - name: Install Task
         uses: arduino/setup-task@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-
+      
+      - uses: actions/checkout@v2
+      
       - name: Build docker
         run: task docker:build
         shell: bash
