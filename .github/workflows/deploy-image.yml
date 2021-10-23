@@ -1,16 +1,16 @@
-name: 
-on:
-  - pull_request
+# name: 
+# on:
+#   - pull_request
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./app
-    steps:
-      - name: Install Task
-        uses: arduino/setup-task@v1
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     defaults:
+#       run:
+#         working-directory: ./app
+#     steps:
+#       - name: Install Task
+#         uses: arduino/setup-task@v1
 
-      - name: Build docker
-        run: task docker:build
+#       - name: Build docker
+#         run: task docker:build
