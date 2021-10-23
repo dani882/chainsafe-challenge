@@ -1,10 +1,12 @@
 name: Merge me
 
 on:
-  workflow_run:
-    workflows: ["run-node-test"]
-    types:
-      - completed
+  - pull_request
+# on:
+#   workflow_run:
+#     workflows: ["run-node-test"]
+#     types:
+#       - completed
 jobs:
   merge-me:
     name: Merge me!
