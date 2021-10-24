@@ -6,7 +6,7 @@ on:
       - completed
     workflows:
       # List all required workflow names here.
-      - 'run-node-test'
+      - 'Run NodeJS Test'
 
 jobs:
   merge-me:
