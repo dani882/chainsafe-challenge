@@ -1,4 +1,4 @@
-name: Run NodeJS Test
+name: Test and Merge
 
 on:
   push:
