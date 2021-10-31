@@ -11,8 +11,6 @@ jobs:
 if: >
       ${{ github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success' }}
-
-# github.event.pull_request.merged == true && ( github.ref == 'refs/heads/main' )
     steps:
       if: github.event.pull_request.merged
       - name: Install Task
