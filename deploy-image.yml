@@ -5,7 +5,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-     
     steps:
       - name: Install Task
         uses: arduino/setup-task@v1

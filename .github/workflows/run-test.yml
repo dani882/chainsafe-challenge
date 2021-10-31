@@ -1,6 +1,5 @@
 name: Run NodeJS Test
-on:
-  - pull_request
+on: pull_request
 
 jobs:
   build:
@@ -10,7 +9,7 @@ jobs:
         working-directory: ./app
     steps:
       - uses: actions/checkout@v2
-        uses: actions/setup-node@v2
+      - uses: actions/setup-node@v2
       - name: Install dependencies
         run: npm ci
       - run: npm run build --if-present
