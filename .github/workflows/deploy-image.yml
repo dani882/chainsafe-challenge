@@ -1,11 +1,18 @@
 name: Docker build
 on:
-  - pull_request
+  - workflow_run:
+      workflows: ["Run NodeJS Test"]
+      types:
+        - completed
 
 jobs:
   build:
     runs-on: ubuntu-latest
-if: github.event.pull_request.merged
+if: >
+      ${{ github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success' }}
+
+# github.event.pull_request.merged == true && ( github.ref == 'refs/heads/main' )
     steps:
       if: github.event.pull_request.merged
       - name: Install Task

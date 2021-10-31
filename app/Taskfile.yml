@@ -4,11 +4,13 @@ version: '3'
 
 vars:
   DOCKER_IMAGE_NAME: chainsafe/devops
+  GIT_BRANCH: 
+    sh: git branch --show-current
 
 tasks:
   docker:build:
     cmds:
-      - docker build -t {{ .DOCKER_IMAGE_NAME }} .
+      - docker build -t {{ .DOCKER_IMAGE_NAME }}:{{ .GIT_BRANCH }} .
 
   docker:run:
     cmds:
