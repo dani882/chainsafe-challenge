@@ -6,6 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      if: github.event.pull_request.merged
       - name: Install Task
         uses: arduino/setup-task@v1
         with:
